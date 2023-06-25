@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/css2.css?family=Open+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--<script src='assets/scripts/jquery.2.1.3.min.js'></script>-->
+    <script src='assets/scripts/jquery.3.4.1.min.js'></script>
+    <script src='assets/scripts/jquery.ui.1.13.2.min.js'></script>
+    <script src="assets/scripts/jquery.marquee.1.5.0.min.js"></script>
+
+    <script src='assets/scripts/Prototype/String.js'></script>
+
+    <title>UI Game</title>
+</head>
+
+<body>
+<div id="damage_area" class="damage_area"></div>
+<div id="killer_skull" class="killer_skull"></div>
+<div id="uiTimer" class="uiTimer"></div>
+<div id="topKill" class="topKill"></div>
+
+<div id="DGuardArea" class="DGuardArea">
+    <h1 id="DGuardText"></h1>
+    <button onclick="cpp.ExitApp();">Exit</button>
+</div>
+
+<!--ItemEffect Start-->
+<div id="itemEffectSuccess" class="itemEffect itemEffectSuccess"></div>
+<div id="itemEffectFail" class="itemEffect itemEffectFail"></div>
+<div id="itemEffectFail2" class="itemEffect itemEffectFail2"></div>
+<div id="itemEffectCombineSuccess" class="itemEffectCombine itemEffectCombineSuccess"></div>
+<div id="itemEffectCombineFail" class="itemEffectCombine itemEffectCombineFail"></div>
+<!--ItemEffect End-->
+
+
+<script>
+/**
+ * 
+ * OnLoadingMap
+*/
+function onEnterZone()
+{
+    clearUITimer();
+    clearUITopKill();
+}
+
+$(document).ready(function () {
+    document.addEventListener("mousedown", handlerMouseDown, false);
+});
+
+/*
+ * custom click, call from cpp
+ */
+//custom click,
+var gCustomFocus = false;
+function getCustomFocus()
+{
+    if(gCustomFocus)
+    {
+        gCustomFocus = false;
+        return true;
+    }
+    return false;
+}
+
+/**
+ * 
+ * @HTMLElement t
+ */
+function validForClickEvent(t)
+{
+    const tagName = t.tagName;
+    //console.log(tagName);
+    return 
+    tagName === "BUTTON"
+    || tagName === "INPUT"
+    //t.getAttribute("data-cf")
+    ;
+}
+function handlerMouseDown(e) {
+    if( validForClickEvent(e.target) )
+    {
+        gCustomFocus = true;
+        return true;
+    }
+    e.stopPropagation();
+    e.preventDefault();
+    return false;
+}
+
+</script>
+
+<script src="assets/scripts/config.js"></script>
+
+<script src="assets/scripts/DamageSystem.js"></script>
+<script src="assets/scripts/TimerSystem.js"></script>
+<script src="assets/scripts/TopKillSystem.js"></script>
+<script src="assets/scripts/ItemEffectSystem.js"></script>
+
+<script type="text/javascript">
+    var your_ip_for_error = "0.0.0.0";
+    function resolvedMyIP(callback) {
+        console.log(callback)
+        callback( your_ip_for_error );
+    }
+    function myip(callback){
+
+        if( your_ip_for_error !== "0.0.0.0" ) {
+            resolvedMyIP( callback );
+            return;
+        }
+
+        var r;
+        if (window.XMLHttpRequest) r=new XMLHttpRequest();
+        else r=new ActiveXObject("Microsoft.XMLHTTP");
+        r.onreadystatechange=function(){
+            if (r.readyState==4){
+                if(r.status=="200")
+                    callback( r.responseText );
+                else
+                    resolvedMyIP( callback );
+            }        
+        };
+        r.open("GET","http://api.ipaddress.com/myip?format=json",true);
+        r.send(null);
+    }
+</script>
+
+<script src="assets/scripts/TS2DGuard.js"></script>
+
+
+</body>
+</html>

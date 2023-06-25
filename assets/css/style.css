@@ -1,0 +1,242 @@
+body{
+  margin:0;
+  color:#fff;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+p{
+  margin:0;
+}
+
+.tagElement {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tagElement img {
+  width: 40px;
+  margin: 0 9px;
+}
+
+.damage_area {
+  position: fixed;
+  top: 15%;
+  left: 15%;
+  text-shadow: rgba(165, 157, 42, 0.555) 1px 0 10px;
+  margin-left: 5px;
+}
+
+.damage_area p {
+  width: max-content;
+  background-color: rgba(0,0,0, 0.6);
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.damage_area img {
+  margin: -5px 7px;
+  margin-left: 0;
+}
+
+.killed {
+  color: #E9B800;
+  padding-left: 5px;
+  font-size: small;
+}
+
+.killer_skull {
+  position: fixed;
+  top: 35%;
+  left: 45%;
+  width: 105px;
+  height: 110px;
+}
+
+.killer_skull div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../images/UI_ICON_KILL.png") no-repeat;
+}
+
+#textContainer {
+  display: inline-block;
+}
+
+.uiTimer {
+  position: fixed;
+  top: 15%;
+  left: 1%;
+  width: 125px;
+  background-color: rgba(255, 204, 0, 0.384);
+}
+
+.uiTimer img {
+  position: absolute;
+  margin: 5px 5px;
+}
+
+.uiTimer span {
+  font-size: 35px;
+  margin: 0 40px;
+  color: #E9B800;
+}
+
+.topKill {
+  position: fixed;
+  right: 90px;
+  top: 270px;
+  /*border-radius: 15px;*/
+  padding-left: 20px;
+  padding-right: 50px;
+  padding-bottom: 20px;
+  width: 120px;
+  background-size: contain;
+}
+
+.topKill div {
+  width: 200%;
+  margin: 10px;
+}
+
+.topKill .text {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.GLOW {
+  background-size: contain;
+  background-repeat: repeat-y;
+}
+
+.GLOWND {
+  background-image: url('../images/UI_IMG_GLOW_ND.png');
+}
+
+.GLOWRS {
+  background-image: url('../images/UI_IMG_GLOW_RS.png');
+}
+
+.GLOWGT {
+  background-image: url('../images/UI_IMG_GLOW_GT.png');
+}
+
+.GLOWN {
+  background-image: url('../images/UI_IMG_GLOW_N.png');
+}
+
+.Amblem {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 48px;
+  margin-left: 40px;
+  margin-top: -6px;
+}
+
+.AmblemBlue {
+  background-image: url('../images/UI_ICON_AMBLEM_BLUE.png');
+}
+.AmblemPurple {
+  background-image: url('../images/UI_ICON_AMBLEM_PURPLE.png');
+}
+.AmblemRed {
+  background-image: url('../images/UI_ICON_AMBLEM_RED.png');
+}
+.AmblemGrey {
+  background-image: url('../images/UI_ICON_AMBLEM_GREY.png');
+} 
+
+.Symbol1 {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 38px;
+}
+
+.Symbol1ND {
+  background-image: url('../images/UI_SYMBOL_1_ND.png');
+  margin-left: 45px;
+  margin-top: 4px;
+}
+
+.Symbol1RS {
+  background-image: url('../images/UI_SYMBOL_1_RS.png');
+  margin-left: 45px;
+  margin-top: 0px;
+}
+
+.Symbol1GT {
+  background-image: url('../images/UI_SYMBOL_1_GT.png');
+  margin-left: 45px;
+  margin-top: -1px;
+}
+.Symbol1N {
+  background-image: url('../images/UI_SYMBOL_1_N.png');
+  margin-left: 46px;
+  margin-top: -3px;
+}
+
+.itemEffect {
+  position: fixed;
+  top: 35%;
+  left: 45%;
+  width: 100%;
+  height: 100%;
+}
+
+.itemEffectSuccess div {
+  position: absolute;
+  width: 163px;
+  height: 42px;
+  background: url("../images/UI_IMG_SUCCESS.png") no-repeat;
+}
+
+.itemEffectFail div {
+  position: absolute;
+  width: 227px;
+  height: 52px;
+  background: url("../images/UI_IMG_FAIL.png") no-repeat;
+}
+.itemEffectFail2 div {
+  position: absolute;
+  width: 147px;
+  height: 52px;
+  background: url("../images/UI_IMG_FAIL_2.png") no-repeat;
+}
+
+.itemEffectCombine {
+  position: fixed;
+  top: 35%;
+  left: 35%;
+  width: 100%; 
+  height: 100%;
+}
+
+.itemEffectCombineSuccess div {
+  position: absolute;
+  width: 503px;
+  height: 74px;
+  background: url("../images/UI_IMG_COMBINE_SUCCESS.png") no-repeat;
+}
+
+.itemEffectCombineFail div {
+  position: absolute;
+  width: 466px;
+  height: 89px;
+  background: url("../images/UI_IMG_COMBINE_FAIL.png") no-repeat;
+}
+
+.DGuardArea {
+  position: absolute;
+}
+#DGuardText {
+  color: white;
+}
